@@ -17,7 +17,7 @@ var inquirer = require('inquirer');
 // var guessesSoFar = [];
 
 //Use Inquirer to have user start the game
-var askQuestion = function() {
+
 	inquirer.prompt([
 	 {
 	    type: 'confirm',
@@ -25,23 +25,21 @@ var askQuestion = function() {
 	    message: 'Do you want to start playing hangman?',
 	    default: true
 	  }
-	]);
-}
-// 	inquirer.prompt(beginGame).then(answers => {
-// 		//If user wants to start the game
-// 		if (answers.start){
-// 			console.log(clc.cyanBright("Let's play!"));
-// 			//will run start game function.
-// 			startGame();
-// 		}
+	])
+	.then(answers => {
+		//If user wants to start the game
+		if (answers.start){
+			console.log("Let's play!");
+			//will run start game function.
+			//startGame();
+		}
 
-// 		else {
-// 			//If user doesn't want to play
-// 			console.log(clc.cyanBright("Please come back later!"));
-// 			return;
-// 		}
-// 	});
-// }
+		else {
+			//If user doesn't want to play
+			console.log("Please come back later!");
+			return;
+		}
+	});
 
 // function gameScore() {
 // if (userGuess === randomWord) {
