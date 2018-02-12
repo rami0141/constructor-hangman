@@ -17,7 +17,6 @@ var inquirer = require('inquirer');
 // var guessesSoFar = [];
 
 //Use Inquirer to have user start the game
-
 	inquirer.prompt([
 	 {
 	    type: 'confirm',
@@ -30,6 +29,38 @@ var inquirer = require('inquirer');
 		//If user wants to start the game
 		if (answers.start){
 			console.log("Let's play!");
+			console.log("-----------------------------------------");
+			console.log("SELECT A LETTER... One at a time, please.");
+			//will run start game function.
+			//startGame();
+		}
+
+		else {
+			//If user doesn't want to play
+			console.log("See ya!!");
+			return;
+		}
+	});
+
+function startGame() {
+
+}
+
+//Using inquirer to ask user if they want to play another game
+//This function will be called when a game is over
+function playAgain() {
+	inquirer.prompt([
+	 {
+	    type: 'confirm',
+	    name: 'playAgain',
+	    message: 'Do you want to play again?',
+	    default: true
+	  }
+	])
+	.then(answers => {
+		//If user wants to start the game
+		if (answers.start){
+			console.log("Let's play again!");
 			//will run start game function.
 			//startGame();
 		}
@@ -40,6 +71,7 @@ var inquirer = require('inquirer');
 			return;
 		}
 	});
+}
 
 // function gameScore() {
 // if (userGuess === randomWord) {

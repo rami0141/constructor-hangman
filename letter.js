@@ -16,7 +16,7 @@ function Letter(letter) {
 	// A function that returns the underlying character if the letter has been guessed, 
 	//or a placeholder (like an underscore) if the letter has not been guessed
 	this.displayCharacter = function() {
-		if(this.guessesSoFar === true) {
+		if(this.guessed === true) {
 			return this.letter;
 		} 
 			else {
