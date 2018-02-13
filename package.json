@@ -4,7 +4,8 @@
   "description": "Constructor Hangman is a command-line game made using constructor functions.",
   "main": "index.js",
   "dependencies": {
-    "inquirer": "^5.1.0"
+    "inquirer": "^5.1.0",
+    "require": "^2.4.20"
   },
   "devDependencies": {},
   "scripts": {

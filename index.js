@@ -10,11 +10,10 @@ var wordArray = ["poodle", "dachshund", "retriever", "pitbull", "terrier", "coon
 var randomWord = wordArray[Math.floor(Math.random() * wordArray.length)];
 // var rw = randomWord.split('');
 
-// //Counter
-// var wins = 0;
-// var guessesRemaining = 13;
-var userGuess = process.argv[2];
-// var guessesSoFar = [];
+//Counter
+var wins = 0;
+var guessesRemaining = 13;
+var guessesSoFar = [];
 
 //Use Inquirer to have user start the game
 	inquirer.prompt([
@@ -42,9 +41,7 @@ var userGuess = process.argv[2];
 		}
 	});
 
-function startGame() {
 
-}
 
 //Using inquirer to ask user if they want to play another game
 //This function will be called when a game is over
@@ -88,6 +85,6 @@ if (guessesRemaining === 0) {
 	guessesRemaining = 13;
 	guessesSoFar = [];
 	losses++;
-		} 
+	}
 };
 

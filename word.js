@@ -16,6 +16,7 @@ function Word(word) {
 	//Creates a Letter object for each letter in the current word.
 	this.pushToArray = function() {
 		for (var i = 0; i < this.word.length; i++){
+			//charAt() method returns the character at the specified index in a string.
 			this.letter = new Letter(word.charAt(i))
 			//pushes the letter into the newLetterArray
     		this.newALetterArray.push(this.letter);
@@ -27,6 +28,7 @@ function Word(word) {
 
 	this.character = function(){
 
+	
 	}
 };
 
