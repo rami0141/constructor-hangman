@@ -59,7 +59,7 @@ function playAgain() {
 		if (answers.start){
 			console.log("Let's play again!");
 			//will run start game function.
-			//startGame();
+			gameScore();
 		}
 
 		else {
