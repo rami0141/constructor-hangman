@@ -12,15 +12,15 @@ function Letter(letter) {
 	// A string value to store the underlying character for the letter
 	this.letter = letter;
 	// A boolean value that stores whether that letter has been guessed yet
-	this.guessed = false;
+	this.letterFound = false;
 	// A function that returns the underlying character if the letter has been guessed, 
 	//or a placeholder (like an underscore) if the letter has not been guessed
 	this.displayCharacter = function() {
-		if(this.guessed === true) {
-			return this.letter;
+		if(this.letterFound === false) {
+			return " _ ";
 		} 
 			else {
-				return " _ ";
+				return this.letter;
 			}
 	} //end diplay function
 };//end of Letter function

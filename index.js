@@ -6,14 +6,14 @@ var inquirer = require('inquirer');
 
 
 // // array of words to be guessed
-// var wordArray = ["poodle", "dachshund", "retriever", "pitbull", "terrier", "coonhound", "huskie"];
-// var randomWord = wordArray[Math.floor(Math.random() * wordArray.length)];
+var wordArray = ["poodle", "dachshund", "retriever", "pitbull", "terrier", "coonhound", "huskie"];
+var randomWord = wordArray[Math.floor(Math.random() * wordArray.length)];
 // var rw = randomWord.split('');
 
 // //Counter
 // var wins = 0;
 // var guessesRemaining = 13;
-// var userGuess = process.argv[2];
+var userGuess = process.argv[2];
 // var guessesSoFar = [];
 
 //Use Inquirer to have user start the game
@@ -73,19 +73,21 @@ function playAgain() {
 	});
 }
 
-// function gameScore() {
-// if (userGuess === randomWord) {
-// 	wins++;
+function gameScore() {
+if (userGuess === randomWord) {
+	wins++;
+	console.log("You Win!")
 
-// } else {
-// 	guessesRemaining--;
-// }
+} else {
+	guessesRemaining--;
+	console.log("You lose!")
+}
 
 
-// if (guessesRemaining === 0) {
-// 	guessesRemaining = 13;
-// 	guessesSoFar = [];
-// 	losses++;
-// 		} 
-// };
+if (guessesRemaining === 0) {
+	guessesRemaining = 13;
+	guessesSoFar = [];
+	losses++;
+		} 
+};
 
