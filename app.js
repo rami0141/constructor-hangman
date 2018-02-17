@@ -1,36 +1,36 @@
-var prompt = require('prompt');
-var rpal = require('./Index.js');
-var word = require('./Word.js');
+const prompt = require('prompt');
+const rpal = require('./Index.js')
 var wl = ["poodle", "dachshund", "retriever", "pitbull", "terrier", "coonhound", "huskie"];
 var userGuess = 10;
 
-// var r = new rpal(wl);
-// var rWord = r.GenrandomWord();
-var rWord = new word("pitbull");
+var r = new rpal(wl);
+var rWord = r.GenrandomWord();
 rWord.initiate();
-prompt.start();
-GameBegin(10);
 
-
-
+GameBegin(userGuess)
 
 function GameBegin(guessCount) {
     
-    console.log("Guesses left: " + guessCount);
-    //win or loss 
+    console.log("\nGuesses left: " + guessCount);
 
-    console.log(rWord.cword);
+    rWord.checkWin();
+    if (rWord.win) {
+        console.log("You win");
+        return;
+    }
+    else if (guessCount == 0) {
+        console.log("Game Over")
+        return;
+    }
+    
     console.log(rWord.display.join(" "));
-
-    var ngc = guessCount;
 
     prompt.get(["Guess"], function (err, result) {
         if (err) { return err; }
-        else {
+        if (rWord.compare(result.Guess) != true) {
             guessCount--;
         }
+        GameBegin(guessCount);
     })
     
-
-    //GameBegin(ngc);
 }
